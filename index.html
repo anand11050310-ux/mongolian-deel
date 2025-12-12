@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mongolian Traditional Deel</title>
+<style>
+/* ==================== GENERAL ==================== */
+* { transition: all 0.3s; box-sizing: border-box; }
+body { margin:0; font-family: "Segoe UI", sans-serif; background: #f7f7f7; color: #222; }
+body.dark { background: #121212; color: #e5e5e5; }
+
+/* ==================== NAVBAR ==================== */
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:12px 25px; background:#a00000; color:white; }
+.nav-flag { width:40px; }
+.nav-links { display:flex; gap:25px; list-style:none; }
+.nav-links li a { text-decoration:none; color:white; font-weight:bold; }
+.menu-btn, .dark-toggle { cursor:pointer; padding:6px 12px; border:none; border-radius:6px; }
+.dark-toggle { background:white; color:#a00000; }
+body.dark .dark-toggle { background:#333; color:white; }
+
+/* ==================== HEADER ==================== */
+header { display:flex; align-items:center; gap:20px; padding:30px 40px; background: linear-gradient(135deg,#c00000,#8b0000); color:white; }
+.flag-left { width:80px; }
+header h1 { font-size:44px; margin:0; }
+.subtitle { font-size:20px; opacity:0.9; }
+
+/* ==================== HERO ==================== */
+.hero { background:url("images/deel3.jpg") center/cover no-repeat; height:320px; display:flex; justify-content:center; align-items:center; position:relative; }
+.hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.45); }
+.hero-text { color:white; position:relative; text-align:center; }
+
+/* ==================== GALLERY ==================== */
+.gallery-section { padding:35px 0; }
+.section-title { text-align:center; font-size:34px; color:#a00000; margin-bottom:20px; }
+.gallery { display:flex; justify-content:center; flex-wrap:wrap; gap:25px; }
+.gallery img { width:310px; border-radius:12px; box-shadow:0 5px 10px rgba(0,0,0,0.35); transition:0.3s; }
+.gallery img:hover { transform:scale(1.07); }
+
+/* ==================== CONTENT ==================== */
+.content { width:90%; max-width:900px; background:white; margin:40px auto; padding:30px 40px; border-radius:12px; box-shadow:0 3px 12px rgba(0,0,0,0.2); }
+body.dark .content { background:#1f1f1f; }
+.content h2 { color:#8B0000; }
+.content h3 { color:#b30000; margin-top:20px; }
+.content ul { margin-left:20px; font-size:18px; }
+
+/* ==================== FOOTER ==================== */
+footer { text-align:center; padding:25px; background:#9e0000; color:white; margin-top:40px; }
+.credit { position:fixed; bottom:10px; right:15px; opacity:0.85; font-size:14px; }
+
+/* ==================== MOBILE ==================== */
+@media(max-width:768px){
+  .menu-btn { display:block; }
+  .nav-links { display:none; flex-direction:column; background:#900000; padding:15px; border-radius:10px; }
+}
+
+/* ==================== ANIMATIONS ==================== */
+.fade-in { animation: fade 1.3s ease forwards; opacity: 0; }
+@keyframes fade { to { opacity: 1; } }
+.slide-up { animation: slideUp 1s ease forwards; opacity: 0; }
+@keyframes slideUp { from { transform: translateY(20px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+.zoom-in { animation: zoom 1.3s ease forwards; }
+@keyframes zoom { from { transform: scale(0.85); } to { transform: scale(1); } }
+.float { animation: float 3s infinite ease-in-out; }
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="images/mongolia-flag.png" class="nav-flag" alt="Flag">
+    <span class="nav-title">Mongolian Culture</span>
+  </div>
+  <button class="menu-btn" id="menuBtn">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#english">English</a></li>
+    <li><a href="#mongol">Монгол</a></li>
+  </ul>
+  <button class="dark-toggle" id="darkToggle">🌙</button>
+</nav>
+
+<header>
+  <img class="flag-left" src="images/mongolia-flag.png" alt="Mongolian Flag">
+  <div class="header-content">
+    <h1>Mongolian Traditional Deel</h1>
+    <p class="subtitle">A Modern Cultural Showcase</p>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>The Heritage of Mongolia</h2>
+    <p>The Deel is more than clothing — it is identity.</p>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-section">
+  <h2 class="section-title">Traditional Deel Gallery</h2>
+  <div class="gallery">
+    <img src="images/deel1.jpg" alt="">
+    <a href="https://www.olympics.com/ioc/mongolia" target="_blank">
+      <img src="images/deel2.jpg" alt="">
+    </a>
+    <img src="images/deel3.jpg" alt="">
+  </div>
+</section>
+
+<section id="english" class="content">
+  <h2>About the Mongolian Deel (English)</h2>
+  <p>The <strong>Deel</strong> is a traditional robe worn for centuries by Mongolian nomads. Its design protects from the harsh climate and represents pride and cultural identity.</p>
+  <h3>Types of Deel</h3>
+  <ul>
+    <li><strong>Khalkha Deel</strong> – common and practical</li>
+    <li><strong>Buryat Deel</strong> – wide sleeves, elegant collar</li>
+    <li><strong>Kazakh Shapan</strong> – heavily embroidered</li>
+    <li><strong>Inner Mongolian Deel</strong> – colorful and fitted</li>
+  </ul>
+</section>
+
+<section id="mongol" class="content">
+  <h2>Монгол дээл</h2>
+  <p><strong>Дээл</strong> нь олон зуун жилийн турш нүүдэлчин монголчуудын өмсөж ирсэн уламжлалт хувцас юм. Эрс тэс уур амьсгалд тохирсон хийц загвартай бөгөөд өнөөдрийг хүртэл үнэ цэнээ хадгалсаар байна.</p>
+  <h3>Дээлийн төрлүүд</h3>
+  <ul>
+    <li><strong>Халх дээл</strong> – нийтлэг, энгийн загвартай</li>
+    <li><strong>Буриад дээл</strong> – өргөн ханцуй, өвөрмөц захтай</li>
+    <li><strong>Казах шапан</strong> – гоёмсог хатгамалтай</li>
+    <li><strong>Өвөр Монгол дээл</strong> – тод өнгөтэй, бариу загвартай</li>
+  </ul>
+</section>
+
+<footer>© 2025 Mongolian Culture Website</footer>
+<div class="credit">Made by Anand and Erkhembileg</div>
+
+<script>
+// DOM loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const darkToggle = document.getElementById("darkToggle");
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  // Load saved theme
+  if(localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
+
+  // Dark mode toggle
+  darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    if(document.body.classList.contains("dark")) localStorage.setItem("theme","dark");
+    else localStorage.removeItem("theme");
+  });
+
+  // Mobile menu toggle
+  menuBtn.addEventListener("click", () => {
+    if(navLinks.style.display === "flex") navLinks.style.display = "none";
+    else { navLinks.style.display = "flex"; navLinks.style.flexDirection = "column"; }
+  });
+});
+</script>
+
+</body>
+</html>
